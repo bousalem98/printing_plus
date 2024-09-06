@@ -3,7 +3,7 @@ description: >
   Plugin that allows Flutter apps to generate and print documents to
   compatible printers on Android, iOS, macOS, Windows, and Linux,
   as well as web print.
-homepage: https://github.com/DavBfr/dart_pdf/tree/master/printing
+homepage: https://github.com/bousalem98/printing_plus
 screenshots:
   - description: "Printing a document on iOS"
     path: example.png
@@ -13,7 +13,7 @@ topics:
   - print
   - printing
   - report
-version: 5.13.3
+version: 0.0.1
 
 environment:
   sdk: ">=3.3.0 <4.0.0"

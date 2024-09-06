@@ -1,4 +1,4 @@
-# Printing
+# Printing Plus
 
 A plugin that allows Flutter apps to generate and print
 documents to android or ios compatible printers
