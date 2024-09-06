@@ -17,6 +17,7 @@
 import 'dart:async';
 import 'dart:js_interop' as js;
 import 'dart:js_interop_unsafe' as js;
+import 'dart:js_util' as js_util;
 import 'dart:typed_data';
 import 'dart:ui';
 
@@ -212,9 +213,10 @@ class PrintingPlugin extends PrintingPlatform {
           doc.getElementById(_scriptId) ?? doc.createElement('script');
       script.setAttribute('id', _scriptId);
       script.setAttribute('type', 'text/javascript');
-      script.innerHTML =
-          '''function ${_frameId}_print(){var f=document.getElementById('$_frameId');f.focus();f.contentWindow.print();}'''
-              .toJS;
+      script.innerHTML = js_util.jsify(
+        '''function ${_frameId}_print(){var f=document.getElementById('$_frameId');f.focus();f.contentWindow.print();}''',
+      );
+
       doc.body!.append(script);
 
       final frame = doc.getElementById(_frameId) ?? doc.createElement('iframe');
